@@ -1,0 +1,50 @@
+{
+  "name": "@activescott/diag",
+  "version": "0.0.0",
+  "description": "Yet another logging package. The only thing this package really is doing is defining a consistent API for diagnostic logging.",
+  "license": "MIT",
+  "engines": {
+    "node": "^10 || ^12",
+    "yarn": "^1.17.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/es/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "author": {
+    "name": "Scott Willeke",
+    "email": "scott@willeke.com",
+    "url": "https://scott.willeke.com/"
+  },
+  "devDependencies": {
+    "@activescott/eslint-config": "^1.1.1",
+    "@semantic-release/github": "5.5.0",
+    "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "semantic-release": "^16.0.0-beta.25",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  },
+  "scripts": {
+    "build:cjs": "rm -rfd ./dist/cjs; ./node_modules/.bin/tsc --project tsconfig.cjs.json",
+    "build:es": "rm -rfd ./dist/es; ./node_modules/.bin/tsc --project tsconfig.es.json",
+    "build": "rm -rfd ./dist && yarn run build:es && yarn run build:cjs",
+    "eslint": "./node_modules/.bin/eslint . --ext ts,tsx,js,jsx",
+    "lint": "./node_modules/.bin/prettier -l \"{,!(node_modules)/**/}*.{ts,tsx,md,yml,json,html}\" && yarn run eslint",
+    "lint-fix": "./node_modules/.bin/prettier --write \"{,!(node_modules)/**/}*.{ts,tsx,md,yml,json,html}\" && yarn run eslint --fix",
+    "test": "./node_modules/.bin/jest --coverage",
+    "dev": "./node_modules/.bin/jest --watch",
+    "pretest": "yarn run lint",
+    "prepublishOnly": "yarn run lint && yarn run build"
+  }
+}
