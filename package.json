@@ -4,7 +4,7 @@
   "description": "Yet another logging package. The only thing this package really is doing is defining a consistent API for diagnostic logging.",
   "license": "MIT",
   "engines": {
-    "node": "^10 || ^12",
+    "node": "^10 || >=12",
     "yarn": "^1.17.3"
   },
   "publishConfig": {
@@ -22,15 +22,15 @@
     "url": "https://scott.willeke.com/"
   },
   "devDependencies": {
-    "@activescott/eslint-config": "^1.1.1",
+    "@activescott/eslint-config": "^1.1.2",
     "@semantic-release/github": "5.5.0",
     "@types/jest": "^24.0.18",
-    "@typescript-eslint/eslint-plugin": "^2.3.3",
-    "@typescript-eslint/parser": "^2.3.3",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
     "jest": "^24.9.0",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "semantic-release": "^16.0.0-beta.25",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
