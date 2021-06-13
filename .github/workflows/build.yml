@@ -1,6 +1,10 @@
-name: main
+name: build
 
-on: [push]
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build_and_test:
@@ -50,4 +54,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          ./node_modules/.bin/semantic-release
+          npx semantic-release@17
