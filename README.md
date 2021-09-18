@@ -14,8 +14,8 @@ You'll probably need another package or to create a derived implementation of `D
 
 You can also test your shareable config on your computer before publishing by linking your module globally. Type:
 
-    yarn link
+    npm link
 
 Then, in your project that wants to use your shareable config, type:
 
-    yarn link @activescott/diag
+    npm link @activescott/diag
