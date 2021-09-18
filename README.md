@@ -6,6 +6,8 @@
 
 Yet another logging package. The only thing this package really is doing is defining a consistent API for diagnostic logging.
 
+Alternatives: [loglevel](https://github.com/pimterry/loglevel) and it's [associated plugins](https://github.com/pimterry/loglevel#plugins).
+
 ## Usage
 
 You'll probably need another package or to create a derived implementation of `Diag` to use this. However, you can use the included `DiagConsoleImp` for simple logging directly to console and it will make the migration path a bit easier to a more advanced logger in the future.
