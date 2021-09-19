@@ -4,7 +4,7 @@ module.exports = {
   testEnvironment: "node",
   globals: {
     "ts-jest": {
-      tsConfig: "tsconfig.cjs.json"
+      tsconfig: "tsconfig.cjs.json"
     }
   },
   collectCoverageFrom: ["src/**/*.ts"],
