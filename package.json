@@ -1,10 +1,10 @@
 {
   "name": "@activescott/diag",
   "version": "0.0.0",
-  "description": "Yet another logging package. The only thing this package really is doing is defining a consistent API for diagnostic logging.",
+  "description": "Yet another logging package.",
   "license": "MIT",
   "engines": {
-    "node": "^10 || >=12"
+    "node": ">=12"
   },
   "publishConfig": {
     "access": "public"
@@ -13,7 +13,9 @@
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
   "files": [
-    "dist/"
+    "dist/",
+    "!dist/**/*.test.js",
+    "!dist/**/*.test.d.ts"
   ],
   "author": {
     "name": "Scott Willeke",
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "@activescott/eslint-config": "^2.3.3",
+    "@types/debug": "^4.1.12",
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
@@ -31,6 +34,9 @@
     "prettier": "^2.4.1",
     "ts-jest": "^27.0.5",
     "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "debug": "^4.3.4"
   },
   "scripts": {
     "build:cjs": "rm -rfd ./dist/cjs; ./node_modules/.bin/tsc --project tsconfig.cjs.json",

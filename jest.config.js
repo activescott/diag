@@ -4,9 +4,11 @@ module.exports = {
   testEnvironment: "node",
   globals: {
     "ts-jest": {
-      tsconfig: "tsconfig.cjs.json"
-    }
+      tsconfig: "tsconfig.cjs.json",
+    },
   },
   collectCoverageFrom: ["src/**/*.ts"],
-  testPathIgnorePatterns: ["/node_modules/", "/example"]
+  testPathIgnorePatterns: ["/node_modules/", "/example"],
+  resetMocks: true,
+  restoreMocks: true,
 }
