@@ -27,14 +27,22 @@ it("enabled loggers should log", () => {
   createDebug.enable(process.env.DEBUG)
 
   const diag = createDiag("mytest")
-  const spy = jest.spyOn(process.stderr, "write")
+
+  const spyErr = jest.spyOn(process.stderr, "write")
+  // we don't spy on process.stdout since jest also uses it during the test run.
+  // we can't spy on console.log because jest is a hacker and patches it
+  // const spyConsoleLog = jest.spyOn(console, "log")
 
   diag.debug("debug msg")
+  //expect(spyConsoleLog).toHaveBeenCalledTimes(1) // debug, info
+
   diag.info("info msg")
+  //expect(spyConsoleLog).toHaveBeenCalledTimes(2) // debug, info
+
   diag.warn("warn msg")
   diag.error("error msg")
   diag.assert(false, "assert msg")
-  expect(spy).toHaveBeenCalledTimes(5)
+  expect(spyErr).toHaveBeenCalledTimes(3) // warn, error, assert
 })
 
 it("disabled methods should NOT log", () => {
